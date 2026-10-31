@@ -4,7 +4,7 @@ import SnaprKit
 
 /// Self-test for agents: runs the app's real functions, prints PASS or FAIL
 /// per check, and quits with exit code 0 or 1.
-///   APP_STORE=/tmp/Snapr-self.store ~/Applications/Snapr.app/Contents/MacOS/Snapr --selftest
+///   APP_STORE=/tmp/Snapr-self.store /Applications/Snapr.app/Contents/MacOS/Snapr --selftest
 /// (tools/selftest.sh does this.) Add a check for every story with logic.
 @MainActor
 enum SelfTest {

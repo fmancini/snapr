@@ -3,7 +3,7 @@
 # Usage: tools/snap.sh            all pages
 #        APP_SNAPSHOT_PAGES=all,settings tools/snap.sh
 set -u
-app=~/Applications/Snapr.app/Contents/MacOS/Snapr
+app=/Applications/Snapr.app/Contents/MacOS/Snapr
 store=/tmp/Snapr-test.store
 shots=/tmp/Snapr-shots
 # A crashed run leaves saved window state, and the next launch would wait on a "reopen windows?" alert.

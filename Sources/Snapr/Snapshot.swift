@@ -4,7 +4,7 @@ import SnaprKit
 import SwiftUI
 
 /// Screenshot mode for agents.
-///   APP_STORE=/tmp/test.store APP_SNAPSHOT=/tmp/shots ~/Applications/Snapr.app/Contents/MacOS/Snapr
+///   APP_STORE=/tmp/test.store APP_SNAPSHOT=/tmp/shots /Applications/Snapr.app/Contents/MacOS/Snapr
 /// writes <page>-light.png and <page>-dark.png for the editor, the preview,
 /// and a pin, and settings-<tab>-light.png and -dark.png for every Settings tab, then quits.
 /// Each PNG gets a <page>-<mode>-layout.json with the grid probes (tools/check-layout.swift).

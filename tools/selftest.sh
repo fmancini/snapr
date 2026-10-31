@@ -4,4 +4,4 @@ set -u
 rm -rf ~/Library/Saved\ Application\ State/com.felipemancini.snapr.savedState
 store=/tmp/Snapr-self.store
 rm -f $store $store-shm $store-wal
-APP_STORE=$store ~/Applications/Snapr.app/Contents/MacOS/Snapr --selftest
+APP_STORE=$store /Applications/Snapr.app/Contents/MacOS/Snapr --selftest
