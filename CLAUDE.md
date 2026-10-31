@@ -23,6 +23,7 @@ SwiftData database and no server.
 - Snapshots, seed data, and the self-test refuse to run without `APP_STORE` in /tmp.
 - Never test against the real database in `~/Library/Application Support/Snapr/`.
 - Then check the grid: `tools/grid-lint.sh` and `swift tools/check-layout.swift /tmp/Snapr-shots/*-layout.json`. Both print PASS.
+- Translations: English text is the key; Spanish lives in `Resources/es.lproj/Localizable.strings` (build.sh copies every `.lproj`). AppKit and model strings use `String(localized:)`; SwiftUI literals localize on their own. List every key with `swift build --scratch-path ~/Library/Developer/Snapr/locs-build -Xswiftc -emit-localized-strings -Xswiftc -emit-localized-strings-path -Xswiftc /tmp/snapr-locs` and add the missing ones. Check with `-AppleLanguages "(es)"` on the snapshot command.
 - A change is done when the build has no errors, the grid checks pass, and you looked at the light and dark snapshots.
 
 ## Design rules
