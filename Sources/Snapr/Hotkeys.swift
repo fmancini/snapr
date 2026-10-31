@@ -13,14 +13,14 @@ enum CaptureAction: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .area: "Capture Area"
-        case .fullscreen: "Capture Screen"
-        case .window: "Capture Window"
-        case .scrolling: "Scrolling Capture"
-        case .repeatArea: "Repeat Last Area"
-        case .delayed: "Capture Area in 3 Seconds"
-        case .text: "Capture Text"
-        case .color: "Pick Color"
+        case .area: String(localized: "Capture Area")
+        case .fullscreen: String(localized: "Capture Screen")
+        case .window: String(localized: "Capture Window")
+        case .scrolling: String(localized: "Scrolling Capture")
+        case .repeatArea: String(localized: "Repeat Last Area")
+        case .delayed: String(localized: "Capture Area in 3 Seconds")
+        case .text: String(localized: "Capture Text")
+        case .color: String(localized: "Pick Color")
         }
     }
 
@@ -198,7 +198,7 @@ struct ShortcutRecorder: View {
             Button {
                 recording ? stop() : start()
             } label: {
-                Text(recording ? "Type shortcut…" : center.shortcut(for: action)?.display ?? "None")
+                Text(recording ? String(localized: "Type shortcut…") : center.shortcut(for: action)?.display ?? String(localized: "None"))
                     .monospacedDigit()
                     .frame(minWidth: 96)
             }

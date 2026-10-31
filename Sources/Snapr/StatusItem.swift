@@ -46,11 +46,11 @@ final class StatusItemController: NSObject, NSMenuDelegate {
             if action == .window || action == .delayed { menu.addItem(.separator()) }
         }
         menu.addItem(.separator())
-        menu.addItem(item("Open File…", #selector(openFile)))
-        menu.addItem(item("Open From Clipboard", #selector(openClipboard)))
+        menu.addItem(item(String(localized: "Open File…"), #selector(openFile)))
+        menu.addItem(item(String(localized: "Open From Clipboard"), #selector(openClipboard)))
         menu.addItem(.separator())
-        menu.addItem(item("Settings…", #selector(openSettings), key: ","))
-        menu.addItem(item("Quit Snapr", #selector(quit), key: "q"))
+        menu.addItem(item(String(localized: "Settings…"), #selector(openSettings), key: ","))
+        menu.addItem(item(String(localized: "Quit Snapr"), #selector(quit), key: "q"))
     }
 
     private func item(_ title: String, _ action: Selector, key: String = "") -> NSMenuItem {

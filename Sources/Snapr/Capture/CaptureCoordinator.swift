@@ -60,7 +60,7 @@ final class CaptureCoordinator {
             let scale = NSScreen.screens.first { appKitRect(fromCG: info.frame).intersects($0.frame) }?.backingScaleFactor ?? 2
             deliver(Capture(image: image, scale: scale, sourceRect: info.frame))
         } catch {
-            HUD.show(error.localizedDescription, symbol: "exclamationmark.triangle")
+            HUD.show("\(error.localizedDescription)", symbol: "exclamationmark.triangle")
         }
     }
 
@@ -71,7 +71,7 @@ final class CaptureCoordinator {
             let frame = CGRect(origin: screen.originCG, size: screen.frame.size)
             deliver(Capture(image: image, scale: screen.backingScaleFactor, sourceRect: frame))
         } catch {
-            HUD.show(error.localizedDescription, symbol: "exclamationmark.triangle")
+            HUD.show("\(error.localizedDescription)", symbol: "exclamationmark.triangle")
         }
     }
 
@@ -85,7 +85,7 @@ final class CaptureCoordinator {
             let image = try await ScreenCapturer.capture(displayID: last.displayID, rect: last.local)
             deliver(Capture(image: image, scale: screen.backingScaleFactor, sourceRect: last.global))
         } catch {
-            HUD.show(error.localizedDescription, symbol: "exclamationmark.triangle")
+            HUD.show("\(error.localizedDescription)", symbol: "exclamationmark.triangle")
         }
     }
 
@@ -113,18 +113,20 @@ final class CaptureCoordinator {
 
     /// Copy, save, and show, as Settings say.
     func deliver(_ capture: Capture) {
-        var done: [String] = []
-        if Prefs.afterCopy {
-            Output.copy(capture)
-            done.append("Copied")
-        }
-        if Prefs.afterSave, Output.save(capture) != nil {
-            done.append("Saved")
-        }
+        let copied = Prefs.afterCopy
+        if copied { Output.copy(capture) }
+        let saved = Prefs.afterSave && Output.save(capture) != nil
         switch Prefs.afterShow {
         case .preview: PreviewPanel.show(capture)
         case .editor: EditorController.open(capture)
-        case .nothing: if !done.isEmpty { HUD.show(done.joined(separator: " and "), symbol: "checkmark.circle") }
+        case .nothing:
+            if copied && saved {
+                HUD.show("Copied and saved", symbol: "checkmark.circle")
+            } else if copied {
+                HUD.show("Copied", symbol: "checkmark.circle")
+            } else if saved {
+                HUD.show("Saved", symbol: "checkmark.circle")
+            }
         }
     }
 }

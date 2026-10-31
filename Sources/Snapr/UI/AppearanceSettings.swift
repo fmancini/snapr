@@ -17,7 +17,7 @@ struct AppearanceSettings: View {
                             }
                         }
                     }
-                    Text(store.theme.name)
+                    Text(LocalizedStringKey(store.theme.name))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -28,7 +28,6 @@ struct AppearanceSettings: View {
 
 /// A small sample window in the chosen accent: a sidebar, two tasks, a tag,
 /// a button, and a switch. It redraws as people pick a color.
-/// Swap the sample words for ones from this app.
 private struct AccentPreview: View {
     private let shape = RoundedRectangle(cornerRadius: 12, style: .continuous)
 
@@ -56,9 +55,9 @@ private struct AccentPreview: View {
             }
             .padding(.leading, Space.xs)
             .padding(.bottom, Space.sm)
-            sidebarRow("Inbox", symbol: "tray", selected: true)
-            sidebarRow("Today", symbol: "star", selected: false)
-            sidebarRow("Done", symbol: "checkmark.circle", selected: false)
+            sidebarRow("Captures", symbol: "photo.on.rectangle", selected: true)
+            sidebarRow("Pinned", symbol: "pin", selected: false)
+            sidebarRow("Saved", symbol: "folder", selected: false)
             Spacer(minLength: 0)
         }
         .padding(Space.sm)
@@ -66,7 +65,7 @@ private struct AccentPreview: View {
         .background(.background.secondary)
     }
 
-    private func sidebarRow(_ title: String, symbol: String, selected: Bool) -> some View {
+    private func sidebarRow(_ title: LocalizedStringKey, symbol: String, selected: Bool) -> some View {
         Label(title, systemImage: symbol)
             .font(.callout)
             .foregroundStyle(selected ? Palette.onAccent : .primary)
@@ -79,24 +78,24 @@ private struct AccentPreview: View {
     private var content: some View {
         VStack(alignment: .leading, spacing: Space.sm) {
             HStack(alignment: .firstTextBaseline) {
-                Text("Inbox").font(.headline)
+                Text("Captures").font(.headline)
                 Spacer()
-                Text("1 left").font(.caption).foregroundStyle(Palette.accentText)
+                Text("3 new").font(.caption).foregroundStyle(Palette.accentText)
             }
-            task("Pick a color", done: true)
-            task("Ship the first build", done: false, tag: "Today")
+            task("Copy the image", done: true)
+            task("Annotate the capture", done: false, tag: "Editor")
             Spacer(minLength: 0)
             // Drawn, not real controls: the preview is a picture, and real
             // controls turn gray when the window is not in front.
             HStack {
-                Label("Add Task", systemImage: "plus")
+                Label("Capture Area", systemImage: "rectangle.dashed")
                     .font(.callout.weight(.medium))
                     .foregroundStyle(Palette.onAccent)
                     .padding(.horizontal, Space.md)
                     .frame(height: 24)
                     .background(Palette.accent, in: Capsule())
                 Spacer()
-                Text("Focus").font(.caption).foregroundStyle(.secondary)
+                Text("Preview").font(.caption).foregroundStyle(.secondary)
                 Capsule()
                     .fill(Palette.accent)
                     .frame(width: 28, height: 16)
@@ -108,7 +107,7 @@ private struct AccentPreview: View {
         .padding(Space.md)
     }
 
-    private func task(_ title: String, done: Bool, tag: String? = nil) -> some View {
+    private func task(_ title: LocalizedStringKey, done: Bool, tag: LocalizedStringKey? = nil) -> some View {
         HStack(spacing: Space.sm) {
             Image(systemName: done ? "checkmark.circle.fill" : "circle")
                 .foregroundStyle(done ? AnyShapeStyle(.tint) : AnyShapeStyle(.tertiary))
@@ -149,8 +148,8 @@ private struct AccentSwatch: View {
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .help(theme.name)
-        .accessibilityLabel(theme.name)
+        .help(LocalizedStringKey(theme.name))
+        .accessibilityLabel(LocalizedStringKey(theme.name))
         .accessibilityAddTraits(selected ? .isSelected : [])
     }
 

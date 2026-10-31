@@ -1,0 +1,191 @@
+/* Snapr: Spanish. Keys are the English text from the code.
+   Regenerate the key list with:
+   swift build -Xswiftc -emit-localized-strings -Xswiftc -emit-localized-strings-path -Xswiftc /tmp/snapr-locs */
+
+/* Menu bar and main menu */
+"Capture Area" = "Capturar área";
+"Capture Screen" = "Capturar pantalla";
+"Capture Window" = "Capturar ventana";
+"Scrolling Capture" = "Captura con desplazamiento";
+"Repeat Last Area" = "Repetir última área";
+"Capture Area in 3 Seconds" = "Capturar área en 3 segundos";
+"Capture Text" = "Capturar texto";
+"Pick Color" = "Elegir color";
+"Open File…" = "Abrir archivo…";
+"Open From Clipboard" = "Abrir desde el portapapeles";
+"Settings…" = "Ajustes…";
+"Quit Snapr" = "Salir de Snapr";
+"Save Image" = "Guardar imagen";
+"Save Image As…" = "Guardar imagen como…";
+"Close" = "Cerrar";
+"Pin to Screen" = "Fijar en pantalla";
+"Copy Image" = "Copiar imagen";
+"Copy Text in Image" = "Copiar texto de la imagen";
+"Tools" = "Herramientas";
+"Delete Selection" = "Eliminar selección";
+"Reset Crop" = "Restablecer recorte";
+"Zoom In" = "Acercar";
+"Zoom Out" = "Alejar";
+"Actual Size" = "Tamaño real";
+"Zoom to Fit" = "Ajustar a la ventana";
+
+/* Editor tools */
+"Select" = "Seleccionar";
+"Arrow" = "Flecha";
+"Rectangle" = "Rectángulo";
+"Oval" = "Óvalo";
+"Line" = "Línea";
+"Draw" = "Dibujar";
+"Highlighter" = "Resaltador";
+"Text" = "Texto";
+"Step Counter" = "Contador de pasos";
+"Pixelate" = "Pixelar";
+"Spotlight" = "Foco";
+"Crop" = "Recortar";
+
+/* Editor toolbar */
+"Tool" = "Herramienta";
+"Tools: press the letter shown in each tooltip" = "Herramientas: pulsa la letra que aparece en cada ayuda";
+"Size" = "Grosor";
+"Thin" = "Fino";
+"Medium" = "Medio";
+"Thick" = "Grueso";
+"Line width and text size" = "Grosor de línea y tamaño del texto";
+"Zoom" = "Zoom";
+"Show the whole image again (⌥⌘R)" = "Mostrar de nuevo la imagen completa (⌥⌘R)";
+"Copy Text" = "Copiar texto";
+"Copy the text in the image (⇧⌘T)" = "Copiar el texto de la imagen (⇧⌘T)";
+"Pin" = "Fijar";
+"Pin to screen (⌘P)" = "Fijar en pantalla (⌘P)";
+"Save" = "Guardar";
+"Save to the screenshots folder (⌘S)" = "Guardar en la carpeta de capturas (⌘S)";
+"Copy" = "Copiar";
+"Copy the image (⌘C)" = "Copiar la imagen (⌘C)";
+"Custom Color" = "Color personalizado";
+"Custom color" = "Color personalizado";
+"Red" = "Rojo";
+"Orange" = "Naranja";
+"Yellow" = "Amarillo";
+"Green" = "Verde";
+"Blue" = "Azul";
+"Purple" = "Morado";
+"Black" = "Negro";
+"White" = "Blanco";
+"Change" = "Cambio";
+"Delete" = "Eliminar";
+
+/* Capture overlay */
+"Drag to capture an area. Click a window, or press Space for window mode." = "Arrastra para capturar un área. Haz clic en una ventana o pulsa Espacio para el modo ventana.";
+"Click a window to capture it. Space switches to area mode." = "Haz clic en una ventana para capturarla. Espacio cambia al modo área.";
+"Drag over the text to copy it." = "Arrastra sobre el texto para copiarlo.";
+"Click to copy the color." = "Haz clic para copiar el color.";
+"Drag over the content to scroll." = "Arrastra sobre el contenido que quieres desplazar.";
+
+/* Preview and pin */
+"Double-click to edit. Drag into any app." = "Doble clic para editar. Arrástrala a cualquier app.";
+"Edit" = "Editar";
+"Open in the editor" = "Abrir en el editor";
+"Semi-Transparent" = "Semitransparente";
+"Close (Esc)" = "Cerrar (Esc)";
+
+/* Messages */
+"Copied" = "Copiado";
+"Saved" = "Guardado";
+"Copied and saved" = "Copiado y guardado";
+"Copied %@" = "%@ copiado";
+"Saved to %@" = "Guardado en %@";
+"Could not save to %@" = "No se pudo guardar en %@";
+"Could not open %@" = "No se pudo abrir %@";
+"No image on the clipboard" = "No hay ninguna imagen en el portapapeles";
+"Capturing in 3 seconds" = "Capturando en 3 segundos";
+"Capture an area first" = "Primero captura un área";
+"No text found" = "No se encontró texto";
+"Copied 1 line of text" = "Se copió 1 línea de texto";
+"Copied %lld lines of text" = "Se copiaron %lld líneas de texto";
+"Copied code: %@" = "Código copiado: %@";
+"Scrolling capture needs Accessibility" = "La captura con desplazamiento necesita Accesibilidad";
+"Stop" = "Detener";
+"Stop scrolling and keep what is captured (Esc)" = "Detener el desplazamiento y conservar lo capturado (Esc)";
+"Snapr needs Screen Recording to take screenshots." = "Snapr necesita Grabación de pantalla para hacer capturas.";
+"The display is not available." = "La pantalla no está disponible.";
+"The window is not available." = "La ventana no está disponible.";
+"Allow Screen Recording" = "Permitir Grabación de pantalla";
+"Snapr needs Screen Recording to take screenshots. Turn on Snapr in System Settings > Privacy & Security > Screen & System Audio Recording, then try again." = "Snapr necesita Grabación de pantalla para hacer capturas. Activa Snapr en Ajustes del Sistema > Privacidad y seguridad > Grabación de pantalla y audio del sistema, y vuelve a intentarlo.";
+"Open System Settings" = "Abrir Ajustes del Sistema";
+"Cancel" = "Cancelar";
+
+/* Settings tabs */
+"General" = "General";
+"Capture" = "Captura";
+"Shortcuts" = "Atajos";
+"Advanced" = "Avanzado";
+"Appearance" = "Apariencia";
+
+/* Settings: General */
+"After a capture" = "Después de capturar";
+"Copy to the clipboard" = "Copiar al portapapeles";
+"Save to the screenshots folder" = "Guardar en la carpeta de capturas";
+"Then show" = "Después mostrar";
+"Preview thumbnail" = "Miniatura de vista previa";
+"Editor" = "Editor";
+"Nothing" = "Nada";
+"Close the preview after 8 seconds" = "Cerrar la vista previa a los 8 segundos";
+"App" = "App";
+"Language" = "Idioma";
+"Same as the Mac" = "Igual que el Mac";
+"Restart Snapr" = "Reiniciar Snapr";
+"Snapr uses the new language after a restart." = "Snapr usará el nuevo idioma después de reiniciar.";
+"Open at login" = "Abrir al iniciar sesión";
+"Show in the menu bar" = "Mostrar en la barra de menús";
+"Open Snapr again from Finder or Spotlight to reach Settings." = "Vuelve a abrir Snapr desde el Finder o Spotlight para llegar a Ajustes.";
+
+/* Settings: Capture */
+"Saving" = "Guardar";
+"Screenshots folder" = "Carpeta de capturas";
+"Choose…" = "Elegir…";
+"Format" = "Formato";
+"Save Retina captures at 1x size" = "Guardar las capturas Retina a tamaño 1x";
+"Windows" = "Ventanas";
+"Keep the window shadow" = "Conservar la sombra de la ventana";
+"Scrolling capture" = "Captura con desplazamiento";
+"Maximum height" = "Altura máxima";
+
+/* Settings: Shortcuts */
+"Type shortcut…" = "Escribe el atajo…";
+"None" = "Ninguno";
+"Another app already uses this shortcut." = "Otra app ya usa este atajo.";
+"Click, then press the new shortcut. Delete clears it." = "Haz clic y pulsa el nuevo atajo. Borrar lo elimina.";
+"Clear shortcut" = "Borrar atajo";
+"To use ⇧⌘3 or ⇧⌘4, first turn them off in System Settings > Keyboard > Keyboard Shortcuts > Screenshots." = "Para usar ⇧⌘3 o ⇧⌘4, primero desactívalos en Ajustes del Sistema > Teclado > Atajos de teclado > Capturas de pantalla.";
+"Restore Defaults" = "Restaurar valores por omisión";
+
+/* Settings: Advanced */
+"Esc copies the image and closes the editor" = "Esc copia la imagen y cierra el editor";
+"Text recognition" = "Reconocimiento de texto";
+"Automatic" = "Automático";
+"Keep line breaks" = "Conservar los saltos de línea";
+"Automation" = "Automatización";
+"Allow snapr:// links" = "Permitir enlaces snapr://";
+"Permissions" = "Permisos";
+"Screen Recording" = "Grabación de pantalla";
+"Needed for every capture." = "Necesario para todas las capturas.";
+"Accessibility" = "Accesibilidad";
+"Needed for scrolling capture." = "Necesario para la captura con desplazamiento.";
+"Allowed" = "Permitido";
+
+/* Settings: Appearance */
+"Accent color" = "Color de acento";
+"Preview of the accent color" = "Vista previa del color de acento";
+"Captures" = "Capturas";
+"Pinned" = "Fijadas";
+"3 new" = "3 nuevas";
+"Copy the image" = "Copiar la imagen";
+"Annotate the capture" = "Anotar la captura";
+"Preview" = "Vista previa";
+"System" = "Sistema";
+"Indigo" = "Índigo";
+"Violet" = "Violeta";
+"Pink" = "Rosa";
+"Mint" = "Menta";
+"Teal" = "Verde azulado";
+"Graphite" = "Grafito";

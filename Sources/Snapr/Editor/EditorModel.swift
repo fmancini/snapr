@@ -73,7 +73,7 @@ final class EditorModel {
         guard let index = new.annotations.firstIndex(where: { $0.id == annotation.id }) else { return }
         new.annotations[index] = annotation
         if let old { state = old }
-        apply(new, name: "Change")
+        apply(new, name: String(localized: "Change"))
     }
 
     func deleteSelection() {
@@ -81,7 +81,7 @@ final class EditorModel {
         var new = state
         new.annotations.removeAll { $0.id == id }
         selectedID = nil
-        apply(new, name: "Delete")
+        apply(new, name: String(localized: "Delete"))
     }
 
     func crop(to rect: CGRect) {
@@ -90,14 +90,14 @@ final class EditorModel {
         let area = rect.integral.intersection(bounds)
         guard area.width >= 4, area.height >= 4 else { return }
         new.crop = area
-        apply(new, name: "Crop")
+        apply(new, name: String(localized: "Crop"))
         tool = .select
     }
 
     func resetCrop() {
         var new = state
         new.crop = nil
-        apply(new, name: "Reset Crop")
+        apply(new, name: String(localized: "Reset Crop"))
     }
 
     private func restyleSelection(_ change: (inout Annotation) -> Void) {

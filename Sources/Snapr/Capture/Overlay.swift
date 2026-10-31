@@ -8,11 +8,11 @@ enum OverlayMode {
 
     var hint: String {
         switch self {
-        case .area: "Drag to capture an area. Click a window, or press Space for window mode."
-        case .window: "Click a window to capture it. Space switches to area mode."
-        case .text: "Drag over the text to copy it."
-        case .color: "Click to copy the color."
-        case .scrolling: "Drag over the content to scroll."
+        case .area: String(localized: "Drag to capture an area. Click a window, or press Space for window mode.")
+        case .window: String(localized: "Click a window to capture it. Space switches to area mode.")
+        case .text: String(localized: "Drag over the text to copy it.")
+        case .color: String(localized: "Click to copy the color.")
+        case .scrolling: String(localized: "Drag over the content to scroll.")
         }
     }
 }
@@ -46,7 +46,7 @@ final class OverlayController {
         guard current == nil else { return nil }
         let shots: [DisplayShot]
         do { shots = try await ScreenCapturer.captureAllDisplays() } catch {
-            HUD.show(error.localizedDescription, symbol: "exclamationmark.triangle")
+            HUD.show("\(error.localizedDescription)", symbol: "exclamationmark.triangle")
             return nil
         }
         let controller = OverlayController(mode: mode)

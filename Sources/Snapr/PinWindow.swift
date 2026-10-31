@@ -88,7 +88,7 @@ private final class PinView: NSView {
 
     init(window: PinWindow) {
         pin = window
-        closeButton = NSButton(image: NSImage(systemSymbolName: "xmark.circle.fill", accessibilityDescription: "Close")!,
+        closeButton = NSButton(image: NSImage(systemSymbolName: "xmark.circle.fill", accessibilityDescription: String(localized: "Close"))!,
                                target: window, action: #selector(PinWindow.closeFromMenu(_:)))
         super.init(frame: .zero)
         wantsLayer = true
@@ -101,7 +101,7 @@ private final class PinView: NSView {
         closeButton.isBordered = false
         closeButton.contentTintColor = .white
         closeButton.isHidden = true
-        closeButton.toolTip = "Close (Esc)"
+        closeButton.toolTip = String(localized: "Close (Esc)")
         closeButton.frame = CGRect(x: 6, y: 6, width: 20, height: 20)
         closeButton.autoresizingMask = [.maxXMargin, .minYMargin]
         addSubview(closeButton)
@@ -146,14 +146,14 @@ private final class PinView: NSView {
             menu.addItem(item)
         }
         menu.addItem(.separator())
-        let translucent = NSMenuItem(title: "Semi-Transparent", action: #selector(PinWindow.toggleTranslucent(_:)), keyEquivalent: "")
+        let translucent = NSMenuItem(title: String(localized: "Semi-Transparent"), action: #selector(PinWindow.toggleTranslucent(_:)), keyEquivalent: "")
         translucent.state = pin.isTranslucent ? .on : .off
         menu.addItem(translucent)
         menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Copy", action: #selector(PinWindow.copy(_:)), keyEquivalent: "c"))
-        menu.addItem(NSMenuItem(title: "Edit", action: #selector(PinWindow.edit(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: String(localized: "Copy"), action: #selector(PinWindow.copy(_:)), keyEquivalent: "c"))
+        menu.addItem(NSMenuItem(title: String(localized: "Edit"), action: #selector(PinWindow.edit(_:)), keyEquivalent: ""))
         menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Close", action: #selector(PinWindow.closeFromMenu(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: String(localized: "Close"), action: #selector(PinWindow.closeFromMenu(_:)), keyEquivalent: ""))
         for item in menu.items where item.target == nil && !item.isSeparatorItem { item.target = pin }
         return menu
     }

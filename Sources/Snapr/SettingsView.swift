@@ -52,11 +52,11 @@ enum SettingsTab: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .general: "General"
-        case .capture: "Capture"
-        case .shortcuts: "Shortcuts"
-        case .advanced: "Advanced"
-        case .appearance: "Appearance"
+        case .general: String(localized: "General")
+        case .capture: String(localized: "Capture")
+        case .shortcuts: String(localized: "Shortcuts")
+        case .advanced: String(localized: "Advanced")
+        case .appearance: String(localized: "Appearance")
         }
     }
 
@@ -98,6 +98,8 @@ struct GeneralSettings: View {
     @AppStorage(Prefs.Key.previewAutoClose, store: Prefs.defaults) private var autoClose = true
     @AppStorage(Prefs.Key.showMenuBarIcon, store: Prefs.defaults) private var showIcon = true
     @State private var launchAtLogin = SMAppService.mainApp.status == .enabled
+    @State private var language = AppLanguage.current
+    private let startLanguage = AppLanguage.current
 
     var body: some View {
         Section("After a capture") {
@@ -110,6 +112,18 @@ struct GeneralSettings: View {
                 .disabled(afterShow != Prefs.AfterShow.preview.rawValue)
         }
         Section("App") {
+            Picker("Language", selection: $language) {
+                ForEach(AppLanguage.allCases) { Text($0.title).tag($0) }
+            }
+            .onChange(of: language) { _, new in new.apply() }
+            if language != startLanguage {
+                LabeledContent {
+                    Button("Restart Snapr") { AppLanguage.relaunch() }
+                } label: {
+                    Text("Snapr uses the new language after a restart.")
+                        .foregroundStyle(.secondary)
+                }
+            }
             Toggle("Open at login", isOn: $launchAtLogin)
                 .onChange(of: launchAtLogin) { _, on in
                     do {
@@ -244,8 +258,8 @@ struct AdvancedSettings: View {
 }
 
 private struct PermissionRow: View {
-    let title: String
-    let detail: String
+    let title: LocalizedStringKey
+    let detail: LocalizedStringKey
     let granted: Bool
     let open: () -> Void
 
@@ -260,6 +274,44 @@ private struct PermissionRow: View {
         } label: {
             Text(title)
             Text(detail)
+        }
+    }
+}
+
+/// The app's language: the Mac's, or one picked here. Stored in AppleLanguages
+/// for this app only, which macOS reads at launch.
+enum AppLanguage: String, CaseIterable, Identifiable {
+    case system, en, es
+
+    var id: String { rawValue }
+
+    /// Each language names itself, so people can find theirs.
+    var title: String {
+        switch self {
+        case .system: String(localized: "Same as the Mac")
+        case .en: "English"
+        case .es: "Español"
+        }
+    }
+
+    static var current: AppLanguage {
+        let stored = UserDefaults.standard.persistentDomain(forName: Bundle.main.bundleIdentifier ?? "")?["AppleLanguages"] as? [String]
+        return stored?.first.flatMap { AppLanguage(rawValue: String($0.prefix(2))) } ?? .system
+    }
+
+    func apply() {
+        if self == .system {
+            UserDefaults.standard.removeObject(forKey: "AppleLanguages")
+        } else {
+            UserDefaults.standard.set([rawValue], forKey: "AppleLanguages")
+        }
+    }
+
+    static func relaunch() {
+        let config = NSWorkspace.OpenConfiguration()
+        config.createsNewApplicationInstance = true
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: config) { _, _ in
+            Task { @MainActor in NSApp.terminate(nil) }
         }
     }
 }

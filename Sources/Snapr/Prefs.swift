@@ -31,9 +31,9 @@ enum Prefs {
         var id: String { rawValue }
         var title: String {
             switch self {
-            case .preview: "Preview thumbnail"
-            case .editor: "Editor"
-            case .nothing: "Nothing"
+            case .preview: String(localized: "Preview thumbnail")
+            case .editor: String(localized: "Editor")
+            case .nothing: String(localized: "Nothing")
             }
         }
     }

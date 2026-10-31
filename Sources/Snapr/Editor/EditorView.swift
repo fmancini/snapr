@@ -112,14 +112,14 @@ private struct ColorSwatches: View {
 
     private func name(_ rgba: RGBA) -> String {
         switch rgba {
-        case .red: "Red"
-        case .orange: "Orange"
-        case .yellow: "Yellow"
-        case .green: "Green"
-        case .blue: "Blue"
-        case .purple: "Purple"
-        case .black: "Black"
-        default: "White"
+        case .red: String(localized: "Red")
+        case .orange: String(localized: "Orange")
+        case .yellow: String(localized: "Yellow")
+        case .green: String(localized: "Green")
+        case .blue: String(localized: "Blue")
+        case .purple: String(localized: "Purple")
+        case .black: String(localized: "Black")
+        default: String(localized: "White")
         }
     }
 }

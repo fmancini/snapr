@@ -44,10 +44,13 @@ enum OCR {
         }
         Output.copyText(result.text)
         if result.isCode {
-            HUD.show("Copied code: \(result.text.prefix(40))", symbol: "qrcode")
+            HUD.show("Copied code: \(String(result.text.prefix(40)))", symbol: "qrcode")
         } else {
-            HUD.show(result.lineCount == 1 ? "Copied 1 line of text" : "Copied \(result.lineCount) lines of text",
-                     symbol: "text.viewfinder")
+            if result.lineCount == 1 {
+                HUD.show("Copied 1 line of text", symbol: "text.viewfinder")
+            } else {
+                HUD.show("Copied \(result.lineCount) lines of text", symbol: "text.viewfinder")
+            }
         }
     }
 }

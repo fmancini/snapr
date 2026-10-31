@@ -51,9 +51,9 @@ enum CaptureError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .noPermission: "Snapr needs Screen Recording to take screenshots."
-        case .noDisplay: "The display is not available."
-        case .noWindow: "The window is not available."
+        case .noPermission: String(localized: "Snapr needs Screen Recording to take screenshots.")
+        case .noDisplay: String(localized: "The display is not available.")
+        case .noWindow: String(localized: "The window is not available.")
         }
     }
 }
@@ -67,10 +67,10 @@ enum ScreenCapturer {
         if hasPermission { return true }
         if !CGRequestScreenCaptureAccess() {
             let alert = NSAlert()
-            alert.messageText = "Allow Screen Recording"
-            alert.informativeText = "Snapr needs Screen Recording to take screenshots. Turn on Snapr in System Settings > Privacy & Security > Screen & System Audio Recording, then try again."
-            alert.addButton(withTitle: "Open System Settings")
-            alert.addButton(withTitle: "Cancel")
+            alert.messageText = String(localized: "Allow Screen Recording")
+            alert.informativeText = String(localized: "Snapr needs Screen Recording to take screenshots. Turn on Snapr in System Settings > Privacy & Security > Screen & System Audio Recording, then try again.")
+            alert.addButton(withTitle: String(localized: "Open System Settings"))
+            alert.addButton(withTitle: String(localized: "Cancel"))
             NSApp.activate()
             if alert.runModal() == .alertFirstButtonReturn { Permissions.openScreenRecordingSettings() }
         }

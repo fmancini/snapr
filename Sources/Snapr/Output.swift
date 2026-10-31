@@ -90,7 +90,8 @@ enum HUD {
     private static var panel: NSPanel?
     private static var hideTask: Task<Void, Never>?
 
-    static func show(_ message: String, symbol: String, swatch: String? = nil) {
+    static func show(_ key: String.LocalizationValue, symbol: String, swatch: String? = nil) {
+        let message = String(localized: key)
         if Snapshot.requested || SelfTest.requested { print("HUD \(message)"); return }
         hideTask?.cancel()
         panel?.orderOut(nil)

@@ -36,18 +36,18 @@ public enum Tool: String, CaseIterable, Identifiable, Sendable {
 
     public var title: String {
         switch self {
-        case .select: "Select"
-        case .arrow: "Arrow"
-        case .rectangle: "Rectangle"
-        case .oval: "Oval"
-        case .line: "Line"
-        case .freehand: "Draw"
-        case .highlighter: "Highlighter"
-        case .text: "Text"
-        case .counter: "Step Counter"
-        case .blur: "Pixelate"
-        case .spotlight: "Spotlight"
-        case .crop: "Crop"
+        case .select: String(localized: "Select")
+        case .arrow: String(localized: "Arrow")
+        case .rectangle: String(localized: "Rectangle")
+        case .oval: String(localized: "Oval")
+        case .line: String(localized: "Line")
+        case .freehand: String(localized: "Draw")
+        case .highlighter: String(localized: "Highlighter")
+        case .text: String(localized: "Text")
+        case .counter: String(localized: "Step Counter")
+        case .blur: String(localized: "Pixelate")
+        case .spotlight: String(localized: "Spotlight")
+        case .crop: String(localized: "Crop")
         }
     }
 
