@@ -166,6 +166,23 @@ Status: todo
 ### S-032 App icon
 Status: todo
 
+### S-033 Help window
+As the user, I open Help > Snapr Help (⌘?) or Snapr Help in the menu bar
+item and read how every capture, tool, and setting works.
+Screens: help-<topic>
+Acceptance:
+- [snap] Eight topics in a sidebar: Getting Started, Capturing, Editor,
+  Preview and Pin, Text and Color, Scrolling Capture, Automation,
+  Troubleshooting. English and Spanish.
+- [snap] Shortcuts on the pages match Settings > Shortcuts.
+Status: done
+
+### S-034 About and credits
+As the user, About Snapr shows the version and credits: created by
+Felipe Mancini.
+Screens: about
+Status: done
+
 ## Later
 
 - Backdrop panel (gradients, padding, radii, shadow, aspect presets).

@@ -25,6 +25,13 @@ struct SnaprApp: App {
 /// The main menu while an editor or Settings is in front.
 struct AppCommands: Commands {
     var body: some Commands {
+        CommandGroup(replacing: .appInfo) {
+            Button("About Snapr") { AboutPanel.show() }
+        }
+        CommandGroup(replacing: .help) {
+            Button("Snapr Help") { HelpWindow.show() }
+                .keyboardShortcut("?")
+        }
         CommandGroup(replacing: .appSettings) {
             Button("Settings…") { SettingsWindow.show() }
                 .keyboardShortcut(",")
@@ -115,11 +122,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 /// Snapr lives in the menu bar. It shows a Dock icon and a main menu only
-/// while an editor or Settings window is open.
+/// while an editor, Settings, or Help window is open.
 enum Activation {
     static func update() {
         let needsDock = NSApp.windows.contains { window in
-            window.isVisible && (window.windowController is EditorWindowController || window.identifier == SettingsWindow.id)
+            window.isVisible && (window.windowController is EditorWindowController || window.identifier == SettingsWindow.id || window.identifier == HelpWindow.id)
         }
         let policy: NSApplication.ActivationPolicy = needsDock ? .regular : .accessory
         if NSApp.activationPolicy() != policy { NSApp.setActivationPolicy(policy) }

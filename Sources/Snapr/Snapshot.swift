@@ -6,7 +6,7 @@ import SwiftUI
 /// Screenshot mode for agents.
 ///   APP_STORE=/tmp/test.store APP_SNAPSHOT=/tmp/shots /Applications/Snapr.app/Contents/MacOS/Snapr
 /// writes <page>-light.png and <page>-dark.png for the editor, the preview,
-/// and a pin, and settings-<tab>-light.png and -dark.png for every Settings tab, then quits.
+/// a pin, every Help topic, and About, and settings-<tab>-light.png and -dark.png for every Settings tab, then quits.
 /// Each PNG gets a <page>-<mode>-layout.json with the grid probes (tools/check-layout.swift).
 /// APP_SNAPSHOT_PAGES=editor,settings limits the pages.
 enum Snapshot {
@@ -61,6 +61,26 @@ enum Snapshot {
                     capture(to: "\(dir)/pin-\(mode).png", window: PinWindow.all.last)
                 }
                 PinWindow.all.last?.close()
+            }
+            if wants("help") {
+                for mode in ["light", "dark"] {
+                    setAppearance(mode)
+                    for topic in HelpTopic.allCases {
+                        HelpWindow.show(topic)
+                        try? await Task.sleep(for: .seconds(0.7))
+                        capture(to: "\(dir)/help-\(topic.rawValue)-\(mode).png", window: HelpWindow.window)
+                    }
+                }
+                HelpWindow.window?.close()
+            }
+            if wants("about") {
+                AboutPanel.show()
+                for mode in ["light", "dark"] {
+                    setAppearance(mode)
+                    try? await Task.sleep(for: .seconds(0.7))
+                    capture(to: "\(dir)/about-\(mode).png", window: AboutPanel.window)
+                }
+                AboutPanel.window?.close()
             }
             if wants("settings") {
                 for mode in ["light", "dark"] {

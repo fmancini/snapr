@@ -50,6 +50,9 @@ final class StatusItemController: NSObject, NSMenuDelegate {
         menu.addItem(item(String(localized: "Open From Clipboard"), #selector(openClipboard)))
         menu.addItem(.separator())
         menu.addItem(item(String(localized: "Settings…"), #selector(openSettings), key: ","))
+        menu.addItem(item(String(localized: "Snapr Help"), #selector(openHelp), key: "?"))
+        menu.addItem(item(String(localized: "About Snapr"), #selector(openAbout)))
+        menu.addItem(.separator())
         menu.addItem(item(String(localized: "Quit Snapr"), #selector(quit), key: "q"))
     }
 
@@ -67,5 +70,7 @@ final class StatusItemController: NSObject, NSMenuDelegate {
     @objc private func openFile() { EditorController.openFile() }
     @objc private func openClipboard() { EditorController.openClipboard() }
     @objc private func openSettings() { SettingsWindow.show() }
+    @objc private func openHelp() { HelpWindow.show() }
+    @objc private func openAbout() { AboutPanel.show() }
     @objc private func quit() { NSApp.terminate(nil) }
 }

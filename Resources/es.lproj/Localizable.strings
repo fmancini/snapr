@@ -189,3 +189,152 @@
 "Mint" = "Menta";
 "Teal" = "Verde azulado";
 "Graphite" = "Grafito";
+
+/* About */
+"About Snapr" = "Acerca de Snapr";
+"Created by" = "Creado por";
+"A screenshot tool for the Mac, inspired by Shottr." = "Una herramienta de capturas de pantalla para el Mac, inspirada en Shottr.";
+"Built with SwiftUI, ScreenCaptureKit, and Vision." = "Hecha con SwiftUI, ScreenCaptureKit y Vision.";
+
+/* Help: window and topics */
+"Snapr Help" = "Ayuda de Snapr";
+"Getting Started" = "Primeros pasos";
+"Capturing" = "Capturar";
+"Preview and Pin" = "Vista previa y fijar";
+"Text and Color" = "Texto y color";
+"Troubleshooting" = "Solución de problemas";
+"No shortcut" = "Sin atajo";
+"Settings" = "Ajustes";
+
+/* Help: Getting Started */
+"Snapr lives in the menu bar. Press a shortcut in any app to capture the screen, then copy, save, mark up, or pin the result." = "Snapr vive en la barra de menús. Pulsa un atajo en cualquier app para capturar la pantalla y luego copia, guarda, anota o fija el resultado.";
+"Your first capture" = "Tu primera captura";
+"Press %@ and drag over part of the screen." = "Pulsa %@ y arrastra sobre una parte de la pantalla.";
+"A thumbnail appears in the corner of the screen. The image is already on the clipboard." = "Aparece una miniatura en la esquina de la pantalla. La imagen ya está en el portapapeles.";
+"Click Edit to add arrows and text, or drag the thumbnail into any app." = "Haz clic en Editar para añadir flechas y texto, o arrastra la miniatura a cualquier app.";
+"The first capture asks for Screen Recording. Turn on Snapr in System Settings, then capture again. Scrolling capture also needs Accessibility." = "La primera captura pide Grabación de pantalla. Activa Snapr en Ajustes del Sistema y vuelve a capturar. La captura con desplazamiento también necesita Accesibilidad.";
+"Open Permission Settings" = "Abrir ajustes de permisos";
+"Where to find things" = "Dónde encontrar cada cosa";
+"Menu bar icon" = "Ícono de la barra de menús";
+"Every capture, Open File, Settings, and Help." = "Todas las capturas, Abrir archivo, Ajustes y Ayuda.";
+"What happens after a capture, where files go, shortcuts, and language." = "Qué pasa después de capturar, dónde se guardan los archivos, los atajos y el idioma.";
+"This window" = "Esta ventana";
+"Help > Snapr Help, or ⌘? while Snapr is in front." = "Ayuda > Ayuda de Snapr, o ⌘? con Snapr en primer plano.";
+
+/* Help: Capturing */
+"Change Shortcuts" = "Cambiar atajos";
+"In the capture overlay" = "En la pantalla de captura";
+"Drag" = "Arrastrar";
+"Click" = "Clic";
+"Space" = "Espacio";
+"Select an area" = "Seleccionar un área";
+"The size in pixels shows under the selection." = "El tamaño en píxeles aparece bajo la selección.";
+"Capture a window" = "Capturar una ventana";
+"The window under the pointer is highlighted first." = "Primero se resalta la ventana bajo el puntero.";
+"Switch mode" = "Cambiar de modo";
+"Switches between area and window mode." = "Alterna entre el modo área y el modo ventana.";
+"Move the pointer" = "Mover el puntero";
+"Moves one point at a time. Hold Shift to move ten." = "Lo mueve de a un punto. Mantén Mayúsculas para moverlo diez.";
+"Right-click also cancels." = "El clic derecho también cancela.";
+"The magnifier next to the pointer shows the pixels underneath, their position, and their color, so you can line up edges exactly." = "La lupa junto al puntero muestra los píxeles de abajo, su posición y su color, para que puedas alinear los bordes con exactitud.";
+"By default the image goes to the clipboard and a thumbnail appears. Settings > General can also save every capture, or open the editor right away." = "Por omisión la imagen va al portapapeles y aparece una miniatura. En Ajustes > General también puedes guardar cada captura o abrir el editor de inmediato.";
+"Freezes the screen so you can drag over any part of it." = "Congela la pantalla para que arrastres sobre cualquier parte.";
+"Captures the whole display under the pointer." = "Captura toda la pantalla bajo el puntero.";
+"Captures one window with a transparent background, even if other windows cover it." = "Captura una ventana con fondo transparente, aunque otras ventanas la tapen.";
+"Scrolls the content under an area and joins it into one tall image." = "Desplaza el contenido bajo un área y lo une en una sola imagen alta.";
+"Captures the same area as last time, without selecting it again." = "Captura la misma área que la última vez, sin volver a seleccionarla.";
+"Waits 3 seconds first, so you can open a menu or hover over something." = "Espera 3 segundos antes, para que puedas abrir un menú o pasar el puntero sobre algo.";
+"Copies the text, QR code, or bar code inside an area." = "Copia el texto, código QR o código de barras dentro de un área.";
+"Copies the hex code of the pixel you click." = "Copia el código hexadecimal del píxel donde haces clic.";
+
+/* Help: Editor */
+"Open the editor from the thumbnail, with Open File, or with Open From Clipboard. Press a letter to pick a tool." = "Abre el editor desde la miniatura, con Abrir archivo o con Abrir desde el portapapeles. Pulsa una letra para elegir una herramienta.";
+"Pick a mark to move, restyle, or delete it." = "Elige una marca para moverla, cambiar su estilo o eliminarla.";
+"Drag from the tail to the point." = "Arrastra desde la cola hasta la punta.";
+"Drag to frame something." = "Arrastra para enmarcar algo.";
+"Drag to circle something." = "Arrastra para encerrar algo en un círculo.";
+"Drag a straight line." = "Arrastra una línea recta.";
+"Draw freely with the pointer." = "Dibuja libremente con el puntero.";
+"Mark text like a highlighter pen." = "Marca texto como con un destacador.";
+"Click, type, and press Return. Double-click text to change it." = "Haz clic, escribe y pulsa Retorno. Doble clic sobre un texto para cambiarlo.";
+"Click to place numbered steps: 1, 2, 3." = "Haz clic para poner pasos numerados: 1, 2, 3.";
+"Drag over passwords, names, or anything private to pixelate it." = "Arrastra sobre contraseñas, nombres o cualquier dato privado para pixelarlo.";
+"Drag to dim everything except one area." = "Arrastra para oscurecer todo excepto un área.";
+"Drag to keep only part of the image. Reset Crop brings the rest back." = "Arrastra para quedarte solo con una parte de la imagen. Restablecer recorte recupera el resto.";
+"Working with marks" = "Trabajar con marcas";
+"Pick a color" = "Elegir un color";
+"Red, orange, yellow, green, blue, purple." = "Rojo, naranja, amarillo, verde, azul, morado.";
+"Hold Shift while drawing" = "Mantén Mayúsculas al dibujar";
+"Lines snap to 45 degrees; rectangles and ovals become squares and circles." = "Las líneas se ajustan a 45 grados; los rectángulos y óvalos se vuelven cuadrados y círculos.";
+"Select and move" = "Seleccionar y mover";
+"Click a mark, drag it, or nudge it with the arrow keys. Changing the color or size restyles it." = "Haz clic en una marca, arrástrala o muévela con las flechas. Cambiar el color o el grosor le cambia el estilo.";
+"Delete a mark" = "Eliminar una marca";
+"Removes the selected mark." = "Elimina la marca seleccionada.";
+"Undo" = "Deshacer";
+"⇧⌘Z redoes. Every mark and crop can be undone." = "⇧⌘Z rehace. Cada marca y recorte se puede deshacer.";
+"Finish" = "Terminar";
+"Copies the image with its marks." = "Copia la imagen con sus marcas.";
+"Saves to the screenshots folder. ⇧⌘S asks where." = "Guarda en la carpeta de capturas. ⇧⌘S pregunta dónde.";
+"Floats the image above every window." = "Deja la imagen flotando sobre todas las ventanas.";
+"Copies the text in the image." = "Copia el texto de la imagen.";
+"Done" = "Listo";
+"Copies the image and closes the editor. Settings > Advanced turns the copy off." = "Copia la imagen y cierra el editor. En Ajustes > Avanzado puedes desactivar la copia.";
+
+/* Help: Preview and Pin */
+"The thumbnail" = "La miniatura";
+"After a capture, a thumbnail floats in the corner of the screen for 8 seconds. Hold the pointer over it to keep it and see its buttons." = "Después de capturar, una miniatura flota en la esquina de la pantalla durante 8 segundos. Deja el puntero encima para conservarla y ver sus botones.";
+"Copies the image again." = "Vuelve a copiar la imagen.";
+"Saves to the screenshots folder." = "Guarda en la carpeta de capturas.";
+"Opens the editor. Double-clicking the thumbnail does the same." = "Abre el editor. Hacer doble clic en la miniatura hace lo mismo.";
+"Drop the thumbnail into Mail, Messages, Slack, Finder, or any app." = "Suelta la miniatura en Mail, Mensajes, Slack, el Finder o cualquier app.";
+"Pinned images" = "Imágenes fijadas";
+"A pinned image stays on top of every window, on every desktop. Use it to compare designs or keep a reference in view." = "Una imagen fijada queda encima de todas las ventanas, en todos los escritorios. Úsala para comparar diseños o tener una referencia a la vista.";
+"Move" = "Mover";
+"Drag anywhere on the image." = "Arrastra desde cualquier punto de la imagen.";
+"Scroll" = "Desplazar";
+"Scroll or pinch to resize it." = "Desplaza o pellizca para cambiar su tamaño.";
+"Double-click" = "Doble clic";
+"Opens it in the editor." = "La abre en el editor.";
+"Right-click" = "Clic derecho";
+"More" = "Más";
+"50%, 100%, 200%, semi-transparent, copy, edit, close." = "50 %, 100 %, 200 %, semitransparente, copiar, editar, cerrar.";
+"Or click the close button in its corner." = "O haz clic en el botón de cerrar de su esquina.";
+
+/* Help: Text and Color */
+"Copy text from the screen" = "Copiar texto de la pantalla";
+"Text recognition runs on this Mac. Nothing leaves your computer. If the area holds a QR code or bar code, Snapr copies what the code says instead." = "El reconocimiento de texto se hace en este Mac. Nada sale de tu computador. Si el área tiene un código QR o de barras, Snapr copia lo que dice el código.";
+"Settings > Advanced picks the language and whether line breaks are kept." = "En Ajustes > Avanzado eliges el idioma y si se conservan los saltos de línea.";
+"Move the magnifier over the pixel you want and click. The color is copied as a hex code, like #0A84FF." = "Mueve la lupa sobre el píxel que quieres y haz clic. El color se copia como código hexadecimal, por ejemplo #0A84FF.";
+
+/* Help: Scrolling capture */
+"Scrolling capture takes a picture of something taller than the screen, like a long web page or chat, by scrolling it for you and joining the pieces." = "La captura con desplazamiento fotografía algo más alto que la pantalla, como una página web larga o un chat, desplazándolo por ti y uniendo las partes.";
+"How to use it" = "Cómo usarla";
+"Press %@ and drag over the content that scrolls." = "Pulsa %@ y arrastra sobre el contenido que se desplaza.";
+"Snapr scrolls down and shows the height so far." = "Snapr se desplaza hacia abajo y muestra la altura capturada hasta el momento.";
+"It stops at the end of the content. Press Esc, click, or click Stop to finish sooner." = "Se detiene al final del contenido. Pulsa Esc, haz clic o pulsa Detener para terminar antes.";
+"Good to know" = "Bueno saber";
+"Snapr needs Accessibility to scroll other apps. It asks the first time." = "Snapr necesita Accesibilidad para desplazar otras apps. Lo pide la primera vez.";
+"Settings > Capture sets where it stops. The default is 20,000 pixels." = "En Ajustes > Captura defines dónde se detiene. Por omisión son 20.000 píxeles.";
+"Fixed headers" = "Encabezados fijos";
+"Leave headers and toolbars that do not scroll outside the area." = "Deja fuera del área los encabezados y barras que no se desplazan.";
+
+/* Help: Automation */
+"Start any capture from Shortcuts, Raycast, Alfred, a Stream Deck, or the Terminal with a snapr:// link." = "Inicia cualquier captura desde Atajos, Raycast, Alfred, un Stream Deck o la Terminal con un enlace snapr://.";
+"Links" = "Enlaces";
+"Example" = "Ejemplo";
+"Settings > Advanced can turn links off." = "En Ajustes > Avanzado puedes desactivar los enlaces.";
+
+/* Help: Troubleshooting */
+"Nothing happens when I press a shortcut." = "No pasa nada cuando pulso un atajo.";
+"Another app may use the same keys. Settings > Shortcuts shows a warning next to it. Pick another shortcut." = "Puede que otra app use las mismas teclas. Ajustes > Atajos muestra un aviso junto a él. Elige otro atajo.";
+"Open Shortcuts Settings" = "Abrir ajustes de atajos";
+"Captures are black, or show only the desktop picture." = "Las capturas salen negras o solo muestran el fondo de escritorio.";
+"Snapr does not have Screen Recording. Turn it on in System Settings > Privacy & Security > Screen & System Audio Recording. If it already looks on, remove Snapr from the list, add it again, and restart Snapr." = "Snapr no tiene Grabación de pantalla. Actívala en Ajustes del Sistema > Privacidad y seguridad > Grabación de pantalla y audio del sistema. Si ya aparece activada, quita Snapr de la lista, vuelve a agregarlo y reinicia Snapr.";
+"Open Screen Recording Settings" = "Abrir ajustes de Grabación de pantalla";
+"I can't see the menu bar icon." = "No veo el ícono en la barra de menús.";
+"The menu bar may be full, or the icon may be hidden behind the camera notch. Check System Settings > Menu Bar. You can always open Snapr again from Finder or Spotlight to reach Settings." = "Puede que la barra de menús esté llena o que el ícono quede detrás de la muesca de la cámara. Revisa Ajustes del Sistema > Barra de menús. Siempre puedes volver a abrir Snapr desde el Finder o Spotlight para llegar a Ajustes.";
+"⇧⌘3 and ⇧⌘4 still open the Mac's screenshot tool." = "⇧⌘3 y ⇧⌘4 siguen abriendo la herramienta de capturas del Mac.";
+"macOS keeps those keys. Turn them off in System Settings > Keyboard > Keyboard Shortcuts > Screenshots, then set them in Snapr." = "macOS se reserva esas teclas. Desactívalas en Ajustes del Sistema > Teclado > Atajos de teclado > Capturas de pantalla y luego asígnalas en Snapr.";
+"Scrolling capture stops right away." = "La captura con desplazamiento se detiene de inmediato.";
+"Snapr needs Accessibility to scroll, and the content under the area must scroll with the mouse wheel. Try a smaller area inside the scrolling part." = "Snapr necesita Accesibilidad para desplazar, y el contenido bajo el área debe desplazarse con la rueda del ratón. Prueba con un área más pequeña dentro de la parte que se desplaza.";
+"Open Accessibility Settings" = "Abrir ajustes de Accesibilidad";
