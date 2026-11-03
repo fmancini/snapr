@@ -3,6 +3,20 @@ import SwiftUI
 /// The spacing scale. Every padding, spacing, and size sits on a 4 pt grid.
 ///   APP_GRID=1 Snapr     draw the grid, margins, and probes over the window
 /// Snapshot mode also writes <page>-<mode>-layout.json, which tools/check-layout.swift checks.
+/// Corner radii and stroke widths, on the grid.
+enum Radius {
+    static let xs: CGFloat = 4
+    static let sm: CGFloat = 8
+    static let md: CGFloat = 12
+    static let lg: CGFloat = 16
+    /// Selected-swatch ring and other hairline accents.
+    static let ring: CGFloat = 2
+}
+
+enum Motion {
+    static let hover: Double = 0.15
+}
+
 enum Space {
     static let xs: CGFloat = 4
     static let sm: CGFloat = 8

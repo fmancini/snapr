@@ -173,7 +173,7 @@ enum SampleImage {
             let x = card.minX + CGFloat(32 + i * 72) * scale
             context.setFillColor(RGBA(0.04, 0.52, 1, 0.25 + 0.15 * Double(i)).cgColor)
             context.addPath(CGPath(roundedRect: CGRect(x: x, y: card.maxY - 40 * scale - height, width: 48 * scale, height: height),
-                                   cornerWidth: 6 * scale, cornerHeight: 6 * scale, transform: nil))
+                                   cornerWidth: 6 * scale, cornerHeight: 6 * scale, transform: nil)) // grid: ok sample drawing
             context.fillPath()
         }
         return Capture(image: context.makeImage()!, scale: scale)

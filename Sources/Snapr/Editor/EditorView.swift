@@ -88,7 +88,7 @@ private struct ColorSwatches: View {
                         .frame(width: 16, height: 16)
                         .overlay(Circle().strokeBorder(.separator))
                         .padding(2)
-                        .overlay(Circle().strokeBorder(model.color == rgba ? Color.primary : .clear, lineWidth: 1.5))
+                        .overlay(Circle().strokeBorder(model.color == rgba ? Color.primary : .clear, lineWidth: Radius.ring))
                 }
                 .buttonStyle(.plain)
                 .help(name(rgba))

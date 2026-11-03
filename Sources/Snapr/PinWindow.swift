@@ -99,7 +99,8 @@ private final class PinView: NSView {
         layer?.borderWidth = 1
         layer?.borderColor = NSColor.separatorColor.cgColor
         closeButton.isBordered = false
-        closeButton.contentTintColor = .white
+        closeButton.image = closeButton.image?.withSymbolConfiguration(
+            .init(paletteColors: [.labelColor, .windowBackgroundColor]))
         closeButton.isHidden = true
         closeButton.toolTip = String(localized: "Close (Esc)")
         closeButton.frame = CGRect(x: 6, y: 6, width: 20, height: 20)

@@ -162,7 +162,7 @@ public enum AnnotationRenderer {
         let path = CGMutablePath()
         path.addRect(CGRect(origin: .zero, size: size))
         for rect in rects {
-            path.addPath(CGPath(roundedRect: rect, cornerWidth: 6, cornerHeight: 6, transform: nil))
+            path.addPath(CGPath(roundedRect: rect, cornerWidth: 6, cornerHeight: 6, transform: nil)) // grid: ok exported image pixels
         }
         context.addPath(path)
         context.setFillColor(CGColor(gray: 0, alpha: 0.5))

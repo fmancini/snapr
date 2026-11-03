@@ -338,3 +338,6 @@
 "Scrolling capture stops right away." = "La captura con desplazamiento se detiene de inmediato.";
 "Snapr needs Accessibility to scroll, and the content under the area must scroll with the mouse wheel. Try a smaller area inside the scrolling part." = "Snapr necesita Accesibilidad para desplazar, y el contenido bajo el área debe desplazarse con la rueda del ratón. Prueba con un área más pequeña dentro de la parte que se desplaza.";
 "Open Accessibility Settings" = "Abrir ajustes de Accesibilidad";
+
+/* Tool name with its key, e.g. "Arrow (A)" */
+"%@ (%@)" = "%@ (%@)";

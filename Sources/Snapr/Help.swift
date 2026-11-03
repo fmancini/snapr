@@ -87,10 +87,13 @@ struct HelpView: View {
                 VStack(alignment: .leading, spacing: Space.xxl) {
                     Text(model.topic.title)
                         .font(.largeTitle.weight(.semibold))
+                        .gridProbe("title", area: "help")
                     page(model.topic)
+                        .gridProbe("page", area: "help")
                 }
                 .frame(maxWidth: 640, alignment: .leading)
                 .padding(Space.section)
+                .gridArea("help", inset: Space.section)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .textSelection(.enabled)
             }
@@ -381,7 +384,7 @@ private struct KeyRow: View {
                 .lineLimit(1)
                 .padding(.horizontal, Space.sm)
                 .padding(.vertical, Space.xs)
-                .background(.quaternary.opacity(0.6), in: RoundedRectangle(cornerRadius: 6, style: .continuous))
+                .background(.quaternary.opacity(0.6), in: RoundedRectangle(cornerRadius: Radius.sm, style: .continuous))
                 .frame(width: wideKeys ? 236 : 128, alignment: .leading)
             VStack(alignment: .leading, spacing: Space.xs) {
                 if let symbol {

@@ -290,7 +290,7 @@ final class OverlayView: NSView {
         context.saveGState()
         context.setShadow(offset: CGSize(width: 0, height: 4), blur: 12, color: CGColor(gray: 0, alpha: 0.4))
         context.setFillColor(CGColor(gray: 0.1, alpha: 1))
-        context.addPath(CGPath(roundedRect: box.insetBy(dx: -2, dy: -2), cornerWidth: 10, cornerHeight: 10, transform: nil))
+        context.addPath(CGPath(roundedRect: box.insetBy(dx: -2, dy: -2), cornerWidth: 10, cornerHeight: 10, transform: nil)) // grid: ok CoreGraphics label bubble, not layout
         context.fillPath()
         context.restoreGState()
 

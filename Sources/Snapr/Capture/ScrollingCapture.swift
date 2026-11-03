@@ -54,7 +54,7 @@ enum ScrollingCapture {
             try? await Task.sleep(for: .milliseconds(260))
             guard !session.stopped, let next = try? await ScreenCapturer.capture(displayID: displayID, rect: local) else { break }
             let last = previous
-            let offset = await Task.detached { Stitcher.offset(previous: last, next: next) }.value
+            let offset = await Task.detached { Stitcher.offset(previous: last, next: next) }.value // grid: ok scroll offset, not a view offset
             guard let offset else { break }
             if offset == 0 {
                 still += 1

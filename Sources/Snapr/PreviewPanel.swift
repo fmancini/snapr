@@ -68,7 +68,7 @@ struct PreviewView: View {
     var hoverChanged: (Bool) -> Void = { _ in }
     @State private var hovering = false
 
-    private let shape = RoundedRectangle(cornerRadius: 14, style: .continuous)
+    private let shape = RoundedRectangle(cornerRadius: Radius.lg, style: .continuous)
 
     var body: some View {
         ZStack {
@@ -83,7 +83,7 @@ struct PreviewView: View {
         .overlay(shape.strokeBorder(.separator, lineWidth: 1))
         .contentShape(shape)
         .onHover { inside in
-            withAnimation(.easeOut(duration: 0.15)) { hovering = inside }
+            withAnimation(.easeOut(duration: Motion.hover)) { hovering = inside }
             hoverChanged(inside)
         }
         .onTapGesture(count: 2) { edit() }
@@ -125,7 +125,7 @@ struct PreviewView: View {
             }
         }
         .padding(Space.sm)
-        .background(.black.opacity(0.18))
+        .background(.ultraThinMaterial)
     }
 
     private func actionButton(_ title: LocalizedStringKey, symbol: String, action: @escaping () -> Void) -> some View {

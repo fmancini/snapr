@@ -83,7 +83,7 @@ enum SelfTest {
             // S-024 stitching on the real sample
             let top = sample.image.cropping(to: CGRect(x: 0, y: 0, width: sample.image.width, height: 600))!
             let lower = sample.image.cropping(to: CGRect(x: 0, y: 200, width: sample.image.width, height: 600))!
-            check("stitching finds a 200 px scroll", Stitcher.offset(previous: top, next: lower) == 200)
+            check("stitching finds a 200 px scroll", Stitcher.offset(previous: top, next: lower) == 200) // grid: ok scroll offset, not a view offset
 
             // S-021 color
             check("color under a pixel reads as hex", PixelReader.hex(at: CGPoint(x: 4, y: 4), in: sample.image) != nil)
