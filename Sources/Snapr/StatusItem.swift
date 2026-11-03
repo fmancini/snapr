@@ -21,7 +21,7 @@ final class StatusItemController: NSObject, NSMenuDelegate {
             }
             let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
             item.autosaveName = Self.autosaveName
-            item.button?.image = NSImage(systemSymbolName: "camera.viewfinder", accessibilityDescription: "Snapr")
+            item.button?.image = Self.menuBarImage()
             item.button?.toolTip = "Snapr"
             let menu = NSMenu()
             menu.delegate = self
@@ -31,6 +31,47 @@ final class StatusItemController: NSObject, NSMenuDelegate {
             NSStatusBar.system.removeStatusItem(item)
             self.item = nil
         }
+    }
+
+    /// The app icon's drawing (camera in a viewfinder) as a template image,
+    /// on the icon's 1024 canvas, scaled to the menu bar.
+    static func menuBarImage() -> NSImage {
+        let side: CGFloat = 18
+        let image = NSImage(size: NSSize(width: side, height: side), flipped: true) { _ in
+            let scale = (side - 2) / 560   // the art spans 232...792 on the canvas
+            let transform = NSAffineTransform()
+            transform.translateX(by: 1, yBy: 1)
+            transform.scale(by: scale)
+            transform.translateX(by: -232, yBy: -232)
+
+            let path = NSBezierPath()
+            // Viewfinder corners: an L of two rounded bars in each corner.
+            for (x, y) in [(232.0, 232.0), (620.0, 232.0), (232.0, 728.0), (620.0, 728.0)] {
+                path.append(NSBezierPath(roundedRect: NSRect(x: x, y: y, width: 172, height: 64), xRadius: 32, yRadius: 32))
+            }
+            for (x, y) in [(232.0, 232.0), (728.0, 232.0), (232.0, 620.0), (728.0, 620.0)] {
+                path.append(NSBezierPath(roundedRect: NSRect(x: x, y: y, width: 64, height: 172), xRadius: 32, yRadius: 32))
+            }
+            // Camera, drawn like front.svg: scaled 1.25 around the center.
+            let grow = NSAffineTransform()
+            grow.translateX(by: 512, yBy: 512)
+            grow.scale(by: 1.25)
+            grow.translateX(by: -512, yBy: -512)
+            let camera = NSBezierPath()
+            camera.windingRule = .evenOdd
+            camera.append(NSBezierPath(roundedRect: NSRect(x: 362, y: 402, width: 300, height: 220), xRadius: 48, yRadius: 48))
+            camera.append(NSBezierPath(ovalIn: NSRect(x: 456, y: 456, width: 112, height: 112)))
+            let bump = NSBezierPath(roundedRect: NSRect(x: 432, y: 372, width: 160, height: 56), xRadius: 28, yRadius: 28)
+            NSColor.black.setFill()
+            transform.transform(path).fill()
+            // Filled apart, so the lens stays a hole.
+            transform.transform(grow.transform(camera)).fill()
+            transform.transform(grow.transform(bump)).fill()
+            return true
+        }
+        image.isTemplate = true
+        image.accessibilityDescription = "Snapr"
+        return image
     }
 
     /// Rebuilt on every open, so changed shortcuts show right away.
