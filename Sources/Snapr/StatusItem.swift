@@ -5,13 +5,22 @@ import SnaprKit
 /// loops forever on macOS 26 when the system hides or shows the item.
 final class StatusItemController: NSObject, NSMenuDelegate {
     static let shared = StatusItemController()
+    private static let autosaveName = "SnaprMenuBarItem"
     private var item: NSStatusItem?
 
     /// Shows or hides the item, as Settings say.
     func update() {
         let show = Prefs.defaults.bool(forKey: Prefs.Key.showMenuBarIcon)
         if show, item == nil {
+            // Position 0 is the spot nearest the clock, the last to be pushed
+            // out by a crowded menu bar or the notch. Set once; after that the
+            // system keeps wherever the person drags it with ⌘.
+            let positionKey = "NSStatusItem Preferred Position \(Self.autosaveName)"
+            if UserDefaults.standard.object(forKey: positionKey) == nil {
+                UserDefaults.standard.set(0, forKey: positionKey)
+            }
             let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+            item.autosaveName = Self.autosaveName
             item.button?.image = NSImage(systemSymbolName: "camera.viewfinder", accessibilityDescription: "Snapr")
             item.button?.toolTip = "Snapr"
             let menu = NSMenu()
