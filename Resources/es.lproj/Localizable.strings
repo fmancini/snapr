@@ -341,3 +341,5 @@
 
 /* Tool name with its key, e.g. "Arrow (A)" */
 "%@ (%@)" = "%@ (%@)";
+
+"Copy Last Capture" = "Copiar la última captura";

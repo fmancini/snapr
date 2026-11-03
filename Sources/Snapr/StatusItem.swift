@@ -27,6 +27,7 @@ final class StatusItemController: NSObject, NSMenuDelegate {
     /// Rebuilt on every open, so changed shortcuts show right away.
     func menuNeedsUpdate(_ menu: NSMenu) {
         menu.removeAllItems()
+        menu.autoenablesItems = false
         let hotkeys = HotkeyCenter.shared
         for action in CaptureAction.allCases {
             let entry = NSMenuItem(title: action.title, action: #selector(runAction(_:)), keyEquivalent: "")
@@ -48,6 +49,11 @@ final class StatusItemController: NSObject, NSMenuDelegate {
         menu.addItem(.separator())
         menu.addItem(item(String(localized: "Open File…"), #selector(openFile)))
         menu.addItem(item(String(localized: "Open From Clipboard"), #selector(openClipboard)))
+        let copyLast = item(String(localized: "Copy Last Capture"), #selector(copyLastCapture), key: "c")
+        copyLast.keyEquivalentModifierMask = [.command, .option]
+        copyLast.image = NSImage(systemSymbolName: "doc.on.doc", accessibilityDescription: nil)
+        copyLast.isEnabled = CaptureCoordinator.shared.lastCapture != nil
+        menu.addItem(copyLast)
         menu.addItem(.separator())
         menu.addItem(item(String(localized: "Settings…"), #selector(openSettings), key: ","))
         menu.addItem(item(String(localized: "Snapr Help"), #selector(openHelp), key: "?"))
@@ -69,6 +75,11 @@ final class StatusItemController: NSObject, NSMenuDelegate {
 
     @objc private func openFile() { EditorController.openFile() }
     @objc private func openClipboard() { EditorController.openClipboard() }
+    @objc private func copyLastCapture() {
+        guard let capture = CaptureCoordinator.shared.lastCapture else { return }
+        Output.copy(capture)
+        HUD.show("Copied", symbol: "checkmark.circle")
+    }
     @objc private func openSettings() { SettingsWindow.show() }
     @objc private func openHelp() { HelpWindow.show() }
     @objc private func openAbout() { AboutPanel.show() }

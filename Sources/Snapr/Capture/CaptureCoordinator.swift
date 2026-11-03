@@ -7,6 +7,8 @@ final class CaptureCoordinator {
 
     /// The last area, in global top-left points, for Repeat Last Area.
     private(set) var lastArea: (displayID: CGDirectDisplayID, local: CGRect, global: CGRect)?
+    /// The latest capture, for Copy Last Capture in the menu bar item.
+    private(set) var lastCapture: Capture?
     private var busy = false
 
     func handle(url: URL) {
@@ -113,6 +115,7 @@ final class CaptureCoordinator {
 
     /// Copy, save, and show, as Settings say.
     func deliver(_ capture: Capture) {
+        lastCapture = capture
         let copied = Prefs.afterCopy
         if copied { Output.copy(capture) }
         let saved = Prefs.afterSave && Output.save(capture) != nil
