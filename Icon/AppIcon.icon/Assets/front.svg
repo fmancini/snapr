@@ -1,3 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-  <rect x="262" y="372" width="500" height="380" rx="72" fill="#FFFFFF"/>
+  <g fill="#FFFFFF" transform="translate(512 512) scale(1.25) translate(-512 -512)">
+    <rect x="432" y="372" width="160" height="56" rx="28"/>
+    <path fill-rule="evenodd" d="M410 402 H614 A48 48 0 0 1 662 450 V574 A48 48 0 0 1 614 622 H410 A48 48 0 0 1 362 574 V450 A48 48 0 0 1 410 402 Z M512 456 A56 56 0 1 0 512 568 A56 56 0 1 0 512 456 Z"/>
+  </g>
 </svg>
