@@ -22,6 +22,7 @@ Snapr es una app nativa de macOS hecha en SwiftUI, inspirada en Shottr. Vive en 
 - **Captura** de un área, una ventana (con fondo transparente y sombra) o la pantalla completa, con atajos globales.
 - **Lupa** con la cuadrícula de píxeles y el tamaño de la selección. Espacio cambia a modo ventana, Esc cancela.
 - **Repetir la última área** y **captura con retardo** de 3 segundos.
+- **Copiar la última captura** (⌥⌘C) desde el menú de la barra de menús, para volver a ponerla en el portapapeles.
 - **Miniatura de vista previa** tras cada captura, con Copiar, Guardar, Editar, Fijar y Texto. Se puede arrastrar a Finder o a cualquier app.
 - **Editor** con flecha, rectángulo, óvalo, línea, dibujo libre, resaltador, texto, contador de pasos, pixelado, foco y recorte. Deshacer y rehacer, zoom, copiar (⌘C) y guardar (⌘S).
 - **Reconocimiento de texto (OCR)** y códigos QR con Vision: el texto va directo al portapapeles.
@@ -166,7 +167,7 @@ open snapr://grab/area
 - **Grabación de pantalla**: necesaria para todas las capturas. La primera captura la pide.
 - **Accesibilidad**: solo para la captura con desplazamiento.
 
-Ajustes > Avanzado muestra el estado de los dos permisos.
+Ajustes > Avanzado muestra el estado de los dos permisos. Cada Mac donde instales Snapr los pide por separado.
 
 ## Requisitos
 
@@ -181,6 +182,16 @@ Snapr es un paquete Swift sin proyecto de Xcode.
 ./build.sh          # compila, firma e instala /Applications/Snapr.app
 ./build.sh --open   # además reinicia la app con la nueva versión
 ```
+
+`build.sh` firma con tu certificado Apple Development si lo tiene el llavero y, si no, con firma ad hoc, suficiente para usar la app en tu Mac.
+
+## Compartir con otras personas
+
+```sh
+tools/release.sh    # compila, firma con Developer ID, notariza y escribe dist/Snapr.zip
+```
+
+Necesita un certificado **Developer ID Application** y un perfil de `notarytool`; los pasos están en [`docs/RELEASE.md`](docs/RELEASE.md). Sin cuenta de pago, comparte el build ad hoc: en el otro Mac se abre la primera vez con clic derecho > Abrir.
 
 ## Pruebas
 
@@ -202,7 +213,7 @@ tools/snap.sh                                                    # capturas de l
 | `Resources/` | Traducciones (`en.lproj`, `es.lproj`). |
 | `Icon/AppIcon.icon` | Icono de la app (Icon Composer). |
 | `docs/` | Brief, historias de usuario, índice de pantallas e imágenes. |
-| `tools/` | Scripts de capturas, autoprueba, cuadrícula e icono. |
+| `tools/` | Scripts de capturas, autoprueba, cuadrícula, icono y versión para compartir. |
 
 ## Créditos
 
